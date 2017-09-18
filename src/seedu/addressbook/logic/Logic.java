@@ -42,7 +42,7 @@ public class Logic {
     }
 
     /**
-     * Creates the StorageFile object based on the user specified path (if any) or the default storage path.
+     * Creates the Storage object based on the user specified path (if any) or the default storage path.
      * @throws Storage.InvalidStorageException if the storage cannot be initialized properly.
      */
     private Storage initializeStorage() throws Storage.InvalidStorageException {
