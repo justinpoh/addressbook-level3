@@ -29,10 +29,30 @@ public abstract class Storage {
         }
     }
 
+    /**
+     * Saves all the data to this storage
+     * @throws StorageOperationException if there were errors converting and/or storing data to the storage
+     */
     public abstract void save(AddressBook addressbook) throws StorageOperationException;
+
+    /**
+     * Loads all the data from this storage
+     * @throws StorageOperationException if there were errors reading and/or converting data from program's copy
+     */
     public abstract AddressBook load() throws StorageOperationException;
     public abstract String getPath();
+
+    /**
+     * @throws InvalidStorageException if the default filePath is invalid
+     */
     public static Storage getStorage() throws InvalidStorageException {
         return new StorageFile();
+    }
+
+    /**
+     * @throws InvalidStorageException if the given filePath is invalid
+     */
+    public static Storage getStorage(String filePath) throws InvalidStorageException {
+        return new StorageFile(filePath);
     }
 }
