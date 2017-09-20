@@ -45,14 +45,14 @@ public abstract class Storage {
     /**
      * @throws InvalidStorageException if the default filePath is invalid
      */
-    public static Storage getStorage() throws InvalidStorageException {
+    /*public static Storage getStorage() throws InvalidStorageException {
         return new StorageFile();
-    }
+    }*/
 
     /**
      * @throws InvalidStorageException if the given filePath is invalid
      */
-    public static Storage getStorage(String filePath) throws InvalidStorageException {
+    /*public static Storage getStorage(String filePath) throws InvalidStorageException {
         return new StorageFile(filePath);
-    }
+    }*/
 }
