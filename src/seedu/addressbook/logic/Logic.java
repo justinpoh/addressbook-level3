@@ -23,9 +23,14 @@ public class Logic {
     /** The list of person shown to the user most recently.  */
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
 
-    public Logic() throws Exception{
+    /*public Logic() throws Exception{
         setStorage(initializeStorage());
         setAddressBook(storage.load());
+    }*/
+
+    public Logic(Storage storage) throws Exception {
+        setStorage(storage);
+        setAddressBook(this.storage.load());
     }
 
     Logic(Storage storage, AddressBook addressBook){
@@ -41,13 +46,14 @@ public class Logic {
         this.addressBook = addressBook;
     }
 
+
     /**
      * Creates the Storage object based on the user specified path (if any) or the default storage path.
      * @throws Storage.InvalidStorageException if the storage cannot be initialized properly.
      */
-    private Storage initializeStorage() throws Storage.InvalidStorageException {
+    /*private Storage initializeStorage() throws Storage.InvalidStorageException {
         return Storage.getStorage();
-    }
+    }*/
 
     public String getStorageFilePath() {
         return storage.getPath();
