@@ -13,6 +13,7 @@ import seedu.addressbook.data.person.*;
 import seedu.addressbook.data.tag.Tag;
 import seedu.addressbook.data.tag.UniqueTagList;
 import seedu.addressbook.storage.StorageFile;
+import seedu.addressbook.storage.Storage;
 
 import java.util.*;
 
@@ -28,7 +29,7 @@ public class LogicTest {
     @Rule
     public TemporaryFolder saveFolder = new TemporaryFolder();
 
-    private StorageFile saveFile;
+    private Storage saveFile;
     private AddressBook addressBook;
     private Logic logic;
 
